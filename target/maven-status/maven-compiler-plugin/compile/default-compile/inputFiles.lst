@@ -1,8 +1,0 @@
-/Users/vkbalakr/work/flink-examples/grpc/src/main/java/com/intel/flink/jni/NativeLoader.java
-/Users/vkbalakr/work/flink-examples/grpc/src/main/java/com/intel/flink/datatypes/InputMetadata.java
-/Users/vkbalakr/work/flink-examples/grpc/src/main/java/com/intel/flink/state/MapTwoStreamsDemo1.java
-/Users/vkbalakr/work/flink-examples/grpc/src/main/java/com/intel/flink/datatypes/CameraWithCube.java
-/Users/vkbalakr/work/flink-examples/grpc/src/main/java/com/intel/flink/sources/CheckpointedInputMetadataSource.java
-/Users/vkbalakr/work/flink-examples/grpc/src/main/java/com/intel/grpc/image/client/ImageRefClient.java
-/Users/vkbalakr/work/flink-examples/grpc/src/main/java/com/intel/flink/sources/CheckpointedCameraWithCubeSource.java
-/Users/vkbalakr/work/flink-examples/grpc/src/main/java/com/intel/flink/datatypes/CameraTuple.java
