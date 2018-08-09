@@ -201,8 +201,7 @@ public class CameraWithCube implements Comparable<CameraWithCube> {
         if (other == null) {
             return 1;
         } else {
-            int i = cameraKey != null ? cameraKey.compareTo(other.getCameraKey()) : -1;
-            return i;
+            return cameraKey != null ? cameraKey.compareTo(other.getCameraKey()) : -1;
 
             //TODO: do we need to compare cubeLst ?
         }

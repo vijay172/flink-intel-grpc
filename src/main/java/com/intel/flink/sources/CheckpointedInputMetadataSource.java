@@ -72,7 +72,6 @@ public class CheckpointedInputMetadataSource implements SourceFunction<InputMeta
     @Override
     public void run(SourceContext<InputMetadata> sourceContext) throws Exception {
         final Object lock = sourceContext.getCheckpointLock();
-        long prevKickOffTime = currentTimeMs; //currentTimeMs passed in initially as kickoff time
         final InputMetadata inputMetadata = new InputMetadata();
         final InputMetadata.InputMetadataKey inputMetadataKey = new InputMetadata.InputMetadataKey();
 
@@ -100,16 +99,14 @@ public class CheckpointedInputMetadataSource implements SourceFunction<InputMeta
                 }
                 //next seqCnt after servingSpeedMs
                 long currWorkingTime = System.currentTimeMillis();//1240 ; 1267
-                long nextKickOffTime = prevKickOffTime + (servingSpeedMs * (seqCnt+1) + 100000);// 1234 + 33 *1= 1267; 1267 + 33= 1300
+                long nextKickOffTime = currentTimeMs + (servingSpeedMs * (seqCnt+1) + 100000);// 1234 + 33 *1= 1267; 1267 + 33= 1300
                 long diffGreaterThanZero = nextKickOffTime - currWorkingTime;//1267 - 1240 = 27; 1300 - 1267 = 33
                 if (diffGreaterThanZero > 0) {
                     Thread.sleep(diffGreaterThanZero);
                 }
             }
-            if (seqCnt >= maxSeqCnt) {
-                logger.debug("Reached end of InputMetadata event generation");
-                break;
-            }
+            logger.debug("Reached end of InputMetadata event generation");
+            break;
         }
         sourceContext.close();
         logger.debug("Stopping InputMetadata events generator");

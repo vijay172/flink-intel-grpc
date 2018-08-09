@@ -183,7 +183,7 @@ public class ImageRefClient {
         try {
             //asynchronous client
             final ImageServiceGrpc.ImageServiceStub asyncImageClient = ImageServiceGrpc.newStub(channel);
-            String options = "";
+            String options;
             final StreamObserver<CopyImageRequest> requestCopyObserver = asyncImageClient
                     .withDeadline(Deadline.after(deadlineDuration, TimeUnit.SECONDS)) //change to Milliseconds to simulate deadline exception
                     .copyImageReqStream(new StreamObserver<CopyImageResponse>() {
@@ -262,7 +262,7 @@ public class ImageRefClient {
         Map<String, ArrayList<String>> requestMap = new HashMap<>();
         final ImageServiceGrpc.ImageServiceStub asyncImageClient = ImageServiceGrpc.newStub(channel);
         try {
-            String options = "";
+            String options;
             //how to handle copyImage response
             final StreamObserver<CopyImageRequest> requestCopyObserver = asyncImageClient
                     .withDeadline(Deadline.after(deadlineDuration, TimeUnit.SECONDS)) //change to Milliseconds to simulate deadline exception

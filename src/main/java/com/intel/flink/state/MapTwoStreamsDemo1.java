@@ -40,6 +40,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -177,7 +178,8 @@ public class MapTwoStreamsDemo1 {
         private final int port;
         private final long deadlineDuration;
 
-        SampleCopyAsyncFunction(String host, int port, long shutdownWaitTS, String inputFile, String options, int nThreads, long deadlineDuration) {
+        SampleCopyAsyncFunction(final String host, final int port, final long shutdownWaitTS, final String inputFile,
+                                final String options, final int nThreads, final long deadlineDuration) {
             this.shutdownWaitTS = shutdownWaitTS;
             this.inputFile = inputFile;
             this.options = options;
@@ -233,7 +235,7 @@ public class MapTwoStreamsDemo1 {
          * @throws Exception exception thrown
          */
         @Override
-        public void asyncInvoke(final CameraWithCube cameraWithCube, final ResultFuture<CameraWithCube> resultFuture) throws Exception {
+        public void asyncInvoke(final CameraWithCube cameraWithCube, final ResultFuture<CameraWithCube> resultFuture) {
             // each seq# in a diff thread
             this.executorService.submit(() -> {
                 try {
@@ -264,7 +266,7 @@ public class MapTwoStreamsDemo1 {
                             Collections.singletonList(cameraWithCube));
                 } catch (Exception e) {
                     logger.error("SampleCopyAsyncFunction - Exception while making copyImage call: {}", e);
-                    resultFuture.complete(new ArrayList<CameraWithCube>(0));
+                    resultFuture.complete(new ArrayList<>(0));
                 }
             });
         }
@@ -275,20 +277,22 @@ public class MapTwoStreamsDemo1 {
         private ExecutorService executorServiceRead;
 
         private int counter1;
-        private String options;
-        private String outputPath;
+        private final String options;
+        private final String outputPath;
         private String fileName;
         ICsvMapWriter csvMapWriter = null;
-        private String uuid;
-        private long shutdownWaitTS;
-        private int nThreads;
+        private final String uuid;
+        private final long shutdownWaitTS;
+        private final int nThreads;
         private final String host;
         private final int port;
         private final long deadlineDuration;
 
         private static NativeLoader nativeLoaderRead;
 
-        public SampleSinkAsyncFunction(String host, int port, long shutdownWaitTS, String outputPath, String options, int nThreads, String uuid, long deadlineDuration) {
+        public SampleSinkAsyncFunction(final String host, final int port, final long shutdownWaitTS,
+                                       final String outputPath, final String options, final int nThreads,
+                                       final String uuid, final long deadlineDuration) {
             this.options = options;
             this.outputPath = outputPath;
             this.uuid = uuid;
@@ -356,7 +360,7 @@ public class MapTwoStreamsDemo1 {
         }
 
         @Override
-        public void asyncInvoke(final Tuple2<InputMetadata, CameraWithCube> tuple2, final ResultFuture<Tuple2<InputMetadata, CameraWithCube>> resultFuture) throws Exception {
+        public void asyncInvoke(final Tuple2<InputMetadata, CameraWithCube> tuple2, final ResultFuture<Tuple2<InputMetadata, CameraWithCube>> resultFuture) {
             logger.debug("Entered SampleSinkAsyncFunction.asyncInvoke()");
             this.executorServiceRead.submit(() -> {
                 try {
@@ -379,7 +383,7 @@ public class MapTwoStreamsDemo1 {
                         /*String checkStrValue = "";
                         Thread.sleep(10);*/
                         inputMetadataTimingMap.put("AfterReadImage", System.currentTimeMillis());
-                        writeInputMetadataCsv(tuple2, outputPath);
+                        writeInputMetadataCsv(tuple2);
                         logger.info("readImage checkStrValue: {}", checkStrValue);
                         logger.debug("SampleSinkAsyncFunction - after JNI readImage to retrieve EFS file from efsFileLocation: {}", tuple2.f1.fileLocation);
                     }
@@ -388,13 +392,13 @@ public class MapTwoStreamsDemo1 {
                             Collections.singletonList(tuple2));
                 } catch (Exception e) {
                     logger.error("SampleSinkAsyncFunction - Exception while making readImage call in async call: {}", e);
-                    resultFuture.complete(new ArrayList<Tuple2<InputMetadata, CameraWithCube>>(0));
+                    resultFuture.complete(new ArrayList<>(0));
                 }
             });
         }
 
-        private void writeInputMetadataCsv(Tuple2<InputMetadata, CameraWithCube> tuple2, String outputPath) throws Exception {
-            logger.info("SampleSinkAsyncFunction - writeInputMetadataCsv start with outputPath:{}", outputPath);
+        private void writeInputMetadataCsv(final Tuple2<InputMetadata, CameraWithCube> tuple2) {
+            logger.info("SampleSinkAsyncFunction - writeInputMetadataCsv()");
             InputMetadata inputMetadata = tuple2.f0;
             InputMetadata.InputMetadataKey inputMetadataKey = inputMetadata.inputMetadataKey;
             // create mapper and schema
@@ -407,7 +411,7 @@ public class MapTwoStreamsDemo1 {
 
             try {
                 String[] header = {"ts", "cube", "cameraLst", "timingMap"};
-                final Map<String, Object> inputMetadataRow = new HashMap<String, Object>();
+                final Map<String, Object> inputMetadataRow = new HashMap<>();
                 inputMetadataRow.put(header[0], inputMetadataKey.ts);
                 inputMetadataRow.put(header[1], inputMetadataKey.cube);
                 inputMetadataRow.put(header[2], inputMetadata.cameraLst);
@@ -429,13 +433,13 @@ public class MapTwoStreamsDemo1 {
      * Stores Cube InputMetadata in memory buffer till all the camera data arrives.
      */
     static final class SyncLatchFunction extends RichCoFlatMapFunction<InputMetadata, CameraWithCube, Tuple2<InputMetadata, CameraWithCube>> {
-        private String outputFile;
-        private String outputPath;
-        private String fileName;
+        private final String outputFile;
+        private final String outputPath;
+        private final String fileName;
         ICsvMapWriter csvCameraMapWriter = null;
-        private String uuid;
+        private final String uuid;
 
-        public SyncLatchFunction(String outputFile, String outputPath, String uuid) {
+        public SyncLatchFunction(final String outputFile, final String outputPath, final String uuid) {
             this.outputFile = outputFile;
             this.outputPath = outputPath;
             this.uuid = uuid;
@@ -452,7 +456,7 @@ public class MapTwoStreamsDemo1 {
         /**
          * Register all State declaration
          *
-         * @param config
+         * @param config Configuration
          */
         @Override
         public void open(Configuration config) throws Exception {
@@ -558,7 +562,7 @@ public class MapTwoStreamsDemo1 {
                             }
                         } else {
                             //reduce count for (1,CU1) from InputMetadata etc in a loop for all cubeLst entries.
-                            Iterator<String> existingCameraWithCubeIterator = existingCameraWithCubeLst.iterator();
+                            Iterator<String> existingCameraWithCubeIterator = Objects.requireNonNull(existingCameraWithCubeLst).iterator();
                             for (; existingCameraWithCubeIterator.hasNext(); ) {
                                 String existingCameraWithCube = existingCameraWithCubeIterator.next(); //CU1, CU2
                                 // if incoming inputMetadata's cu1 (inputCube) matches existingCube, remove from cameraWithCubeState's cubeLst
@@ -593,7 +597,7 @@ public class MapTwoStreamsDemo1 {
                         }
 
 
-                        if (existingCameraWithCubeLst != null && existingCameraWithCubeLst.size() == 0) {
+                        if (existingCameraWithCubeLst.size() == 0) {
                             //if no cubeLst and tileExists=true, remove the key from the camera state ???
                             //TODO: Use ProcessFunction with a timer to remove the camera data after a certain stipulated time
                             // cameraWithCubeState.remove(cameraKeyFromInputMetadata);
@@ -619,7 +623,7 @@ public class MapTwoStreamsDemo1 {
                 } else {
                     //insert into CameraWithCube with tileExists=false - i.e waiting for TileDB camera input to come in
                     List<String> newCubeLst = new ArrayList<>(Collections.singletonList(inputMetaCube));
-                    CameraWithCube newCameraWithCube = new CameraWithCube(inputMetaTs, inputMetaCam.getCamera(), newCubeLst, false, outputFile);
+                    CameraWithCube newCameraWithCube = new CameraWithCube(inputMetaTs, Objects.requireNonNull(inputMetaCam).getCamera(), newCubeLst, false, outputFile);
                     newCameraWithCube.getTimingMap().put("IntoLatch", t2);
                     cameraWithCubeState.put(cameraKeyFromInputMetadata, newCameraWithCube);
                 }
@@ -667,8 +671,7 @@ public class MapTwoStreamsDemo1 {
                         final InputMetadata existingInputMetadata = inputMetadataState.get(existingMetadataKey);
                         if (existingInputMetadata != null) {
                             List<CameraTuple> existingInputMetaCameraLst = existingInputMetadata.cameraLst;
-                            for (Iterator<CameraTuple> existingInputMetaCameraLstIterator = existingInputMetaCameraLst.iterator(); existingInputMetaCameraLstIterator.hasNext(); ) {
-                                CameraTuple existingInputMetaCam = existingInputMetaCameraLstIterator.next();
+                            for (CameraTuple existingInputMetaCam : existingInputMetaCameraLst) {
                                 String existingInputMetaCamStr = existingInputMetaCam.getCamera();
                                 if (existingInputMetaCamStr != null && existingInputMetaCamStr.equals(cameraKeyCam)) {
                                     //want to keep existing inputMetaData & not remove incoming camera from cameraLst of inputMetadata state
@@ -691,7 +694,7 @@ public class MapTwoStreamsDemo1 {
                             } else {
                                 //updated reduced count in inputMetadata
                                 inputMetadataState.put(existingMetadataKey, existingInputMetadata);
-                                Tuple2<InputMetadata, CameraWithCube> tuple2 = new Tuple2<>(existingInputMetadata, cameraWithCube);
+                                //Tuple2<InputMetadata, CameraWithCube> tuple2 = new Tuple2<>(existingInputMetadata, cameraWithCube);
                                 //writeCameraCsv(tuple2.f1, outputPath);
                                 logger.debug("$$$$$[flatMap2] with Camera data reducing count of existingInputMetadata:{}", existingInputMetadata);
                             }
@@ -706,7 +709,7 @@ public class MapTwoStreamsDemo1 {
             this.meter.markEvent();
         }
 
-        private void writeCameraCsv(CameraWithCube cameraWithCube) throws Exception {
+        private void writeCameraCsv(CameraWithCube cameraWithCube) {
             logger.info("writeCameraCsv start with cameraWithCube:{}", cameraWithCube);
             CameraWithCube.CameraKey cameraKey = cameraWithCube.cameraKey;
             // create mapper and schema
@@ -719,7 +722,7 @@ public class MapTwoStreamsDemo1 {
 
             try {
                 String[] header = {"ts", "cam", "timingMap"};
-                final Map<String, Object> cameraRow = new HashMap<String, Object>();
+                final Map<String, Object> cameraRow = new HashMap<>();
                 cameraRow.put(header[0], cameraKey.ts);
                 cameraRow.put(header[1], cameraKey.cam);
                 cameraRow.put(header[2], cameraWithCube.timingMap);
