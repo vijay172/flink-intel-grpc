@@ -1,0 +1,16 @@
+com/intel/flink/state/MapTwoStreamsDemo1$SyncLatchFunction.class
+com/intel/flink/datatypes/CameraWithCube.class
+com/intel/flink/sources/CheckpointedCameraWithCubeSource.class
+com/intel/grpc/image/client/ImageRefClient.class
+com/intel/flink/state/MapTwoStreamsDemo1$SampleCopyAsyncFunction.class
+com/intel/grpc/image/client/ImageRefClient$1.class
+com/intel/flink/datatypes/InputMetadata$InputMetadataKey.class
+com/intel/flink/datatypes/InputMetadata.class
+com/intel/flink/datatypes/CameraTuple.class
+com/intel/grpc/image/client/ImageRefClient$2.class
+com/intel/flink/state/MapTwoStreamsDemo1.class
+com/intel/flink/datatypes/CameraWithCube$CameraKey.class
+com/intel/flink/jni/NativeLoader.class
+com/intel/flink/sources/CheckpointedInputMetadataSource.class
+com/intel/flink/state/MapTwoStreamsDemo1$SampleSinkAsyncFunction.class
+com/intel/grpc/image/client/ImageRefClient$3.class
