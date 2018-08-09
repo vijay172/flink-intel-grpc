@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25130964-c374-4867-9067-dee1a770d8a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/libexample.so" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/datatypes/CameraTuple.class" afterDir="false" />
@@ -126,6 +123,7 @@
       <change beforePath="$PROJECT_DIR$/../../docker-demo1" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-demo1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../docker-tutorial" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-tutorial" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flink-training-exercises" beforeDir="false" afterPath="$PROJECT_DIR$/../flink-training-exercises" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/.idea/checkstyle-idea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/.idea/compiler.xml" afterDir="false" />
@@ -158,6 +156,7 @@
       <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/lib/ExampleJNI-0.0.1.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/libexample.jnilib" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/libexample.jnilib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../grpc-java-course1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../grpc-java-course1/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../kinesis-video-streams-example/amazon-kinesis-video-streams-producer-sdk-java" beforeDir="false" afterPath="$PROJECT_DIR$/../../kinesis-video-streams-example/amazon-kinesis-video-streams-producer-sdk-java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../scorecard" beforeDir="false" afterPath="$PROJECT_DIR$/../../scorecard" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../sport/truevrdataparser" beforeDir="false" afterPath="$PROJECT_DIR$/../../sport/truevrdataparser" afterDir="false" />
@@ -257,16 +256,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/start_demo_app.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="544" lean-forward="true" selection-start-line="15" selection-end-line="15" selection-end-column="544" />
+            <state relative-caret-position="285">
+              <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -397,8 +396,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="491" />
-    <option name="y" value="-1128" />
+    <option name="x" value="15" />
+    <option name="y" value="-1397" />
     <option name="width" value="1440" />
     <option name="height" value="873" />
   </component>
@@ -443,7 +442,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="nat&#9;PSI&#9;JAVA://com.intel.flink.jni.NativeLoader" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533834317496" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533839518644" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
@@ -612,21 +611,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="491" y="-1128" width="1440" height="873" extended-state="0" />
-    <editor active="true" />
+    <frame x="15" y="-1397" width="1440" height="873" extended-state="0" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="FindBugs-IDEA" />
       <window_info anchor="bottom" id="CheckStyle" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.3290653" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3290653" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Messages" weight="0.3290653" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -796,13 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/start_demo_app.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="544" lean-forward="true" selection-start-line="15" selection-end-line="15" selection-end-column="544" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -810,6 +801,13 @@
             <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/start_demo_app.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
         </state>
       </provider>
     </entry>
