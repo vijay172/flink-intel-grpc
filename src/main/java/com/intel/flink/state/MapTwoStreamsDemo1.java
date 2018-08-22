@@ -42,15 +42,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 /**
  *
  */
 public class MapTwoStreamsDemo1 {
     private static final Logger logger = LoggerFactory.getLogger(MapTwoStreamsDemo1.class);
+
+    private static final String ALL = "all";
+    private static final String COPY = "copy";
+    private static final String READ = "read";
 
     public static void main(String[] args) throws Exception {
         //logger.info("args:", args);
@@ -75,10 +81,15 @@ public class MapTwoStreamsDemo1 {
         final String host = params.get("host", "localhost");
         final int port = params.getInt("port", 50051);
         final long deadlineDuration = params.getInt("deadlineDuration", 5000);
+        final int sourceDelay = params.getInt("sourceDelay", 15000);
+        final String action = params.get("action", ALL);//values are: copy,read,all
 
         logger.info("parallelCam:{}, parallelCube:{}, servingSpeedMs:{}, nbrCameras:{}, maxSeqCnt:{}, nbrCubes:{}, " +
-                        "nbrCameraTuples:{}, inputFile:{}, outputFile:{}, options:{}, outputPath:{}, local: {}", parallelCamTasks, parallelCubeTasks,
-                servingSpeedMs, nbrCameras, maxSeqCnt, nbrCubes, nbrCameraTuples, inputFile, outputFile, options, outputPath, local);
+                        "nbrCameraTuples:{}, inputFile:{}, outputFile:{}, options:{}, outputPath:{}, local: {}, " +
+                        "bufferTimeout:{}, host:{}, port:{}, deadlineDuration:{}, sourceDelay:{}, action:{}",
+                parallelCamTasks, parallelCubeTasks,
+                servingSpeedMs, nbrCameras, maxSeqCnt, nbrCubes, nbrCameraTuples, inputFile, outputFile, options,
+                outputPath, local, bufferTimeout, host, port, deadlineDuration, sourceDelay, action);
         //zipped files
         final StreamExecutionEnvironment env;
         if (local) {
@@ -99,52 +110,64 @@ public class MapTwoStreamsDemo1 {
         env.setBufferTimeout(bufferTimeout);
         long startTime = System.currentTimeMillis();
         DataStream<InputMetadata> inputMetadataDataStream = env
-                .addSource(new CheckpointedInputMetadataSource(maxSeqCnt, servingSpeedMs, startTime, nbrCubes, nbrCameraTuples), "InputMetadata")
+                .addSource(new CheckpointedInputMetadataSource(maxSeqCnt, servingSpeedMs, startTime, nbrCubes, nbrCameraTuples, sourceDelay, outputFile), "InputMetadata")
                 .uid("InputMetadata")
                 .keyBy((inputMetadata) ->
                         inputMetadata.inputMetadataKey != null ? inputMetadata.inputMetadataKey.ts : new Object());
         logger.debug("past inputMetadataFile source");
 
         DataStream<CameraWithCube> keyedByCamCameraStream = env
-                .addSource(new CheckpointedCameraWithCubeSource(maxSeqCnt, servingSpeedMs, startTime, nbrCameras, outputFile), "TileDB Camera")
+                .addSource(new CheckpointedCameraWithCubeSource(maxSeqCnt, servingSpeedMs, startTime, nbrCameras, outputFile, sourceDelay), "TileDB Camera")
                 .uid("TileDB-Camera")
                 .setParallelism(1);
 
-        AsyncFunction<CameraWithCube, CameraWithCube> cameraWithCubeAsyncFunction =
-                new SampleCopyAsyncFunction(host, port, shutdownWaitTS, inputFile, options, nThreads, deadlineDuration);
-        String copySlotSharingGroup = "default";
-        if (!local) {
-            copySlotSharingGroup = "copyImage";
+
+        DataStream<CameraWithCube> cameraWithCubeDataStream;
+        //for copy, only perform copyImage functionality
+        if (action != null && (action.equalsIgnoreCase(ALL) || action.equalsIgnoreCase(COPY))) {
+            AsyncFunction<CameraWithCube, CameraWithCube> cameraWithCubeAsyncFunction =
+                    new SampleCopyAsyncFunction(host, port, shutdownWaitTS, inputFile, options, nThreads, deadlineDuration);
+            String copySlotSharingGroup = "default";
+            if (!local) {
+                copySlotSharingGroup = "copyImage";
+            }
+            DataStream<CameraWithCube> cameraWithCubeDataStreamAsync =
+                    AsyncDataStream.unorderedWait(keyedByCamCameraStream, cameraWithCubeAsyncFunction, timeout, TimeUnit.MILLISECONDS, nCapacity)
+                            .slotSharingGroup(copySlotSharingGroup)
+                            .setParallelism(parallelCamTasks)
+                            .rebalance();//.startNewChain()
+            cameraWithCubeDataStream = cameraWithCubeDataStreamAsync.keyBy((cameraWithCube) -> cameraWithCube.cameraKey != null ?
+                    cameraWithCube.cameraKey.getTs() : new Object());
+        } else {
+            cameraWithCubeDataStream = keyedByCamCameraStream.keyBy((cameraWithCube) -> cameraWithCube.cameraKey != null ?
+                    cameraWithCube.cameraKey.getTs() : new Object());
         }
-        DataStream<CameraWithCube> cameraWithCubeDataStreamAsync =
-                AsyncDataStream.unorderedWait(keyedByCamCameraStream, cameraWithCubeAsyncFunction, timeout, TimeUnit.MILLISECONDS, nCapacity)
-                        .slotSharingGroup(copySlotSharingGroup)
-                        .setParallelism(parallelCamTasks)
-                        .rebalance();//.startNewChain()
-        DataStream<CameraWithCube> cameraWithCubeDataStream = cameraWithCubeDataStreamAsync.keyBy((cameraWithCube) -> cameraWithCube.cameraKey != null ?
-                cameraWithCube.cameraKey.getTs() : new Object());
         logger.debug("past cameraFile source");
-        String uuid = UUID.randomUUID().toString();
-        DataStream<Tuple2<InputMetadata, CameraWithCube>> enrichedCameraFeed = inputMetadataDataStream
-                .connect(cameraWithCubeDataStream)
-                .flatMap(new SyncLatchFunction(outputFile, outputPath, uuid))
-                .uid("connect2Streams")
-                .setParallelism(1).startNewChain(); //TODO:is this efficient or has to be for a logically correct Latch
-        logger.debug("before CubeProcessingSink");
-        String readSlotSharingGroup = "default";
-        if (!local) {
-            readSlotSharingGroup = "readImage";
+
+        if (action != null && (action.equalsIgnoreCase(ALL) || action.equalsIgnoreCase(READ))) {
+            String uuid = UUID.randomUUID().toString();
+            DataStream<Tuple2<InputMetadata, CameraWithCube>> enrichedCameraFeed = inputMetadataDataStream
+                    .connect(cameraWithCubeDataStream)
+                    .flatMap(new SyncLatchFunction(outputFile, outputPath, uuid))
+                    .uid("connect2Streams")
+                    .setParallelism(1).startNewChain(); //TODO:is this efficient or has to be for a logically correct Latch
+            logger.debug("before Read");
+            String readSlotSharingGroup = "default";
+            if (!local) {
+                readSlotSharingGroup = "readImage";
+            }
+            //AsyncIo function with multiple threads for readImage
+            AsyncFunction<Tuple2<InputMetadata, CameraWithCube>, Tuple2<InputMetadata, CameraWithCube>> cubeSinkAsyncFunction =
+                    new SampleSinkAsyncFunction(host, port, shutdownWaitTS, outputPath, options, nThreads, uuid, deadlineDuration);
+            DataStream<Tuple2<InputMetadata, CameraWithCube>> enrichedCameraFeedSinkAsync =
+                    AsyncDataStream.unorderedWait(enrichedCameraFeed, cubeSinkAsyncFunction, timeout, TimeUnit.MILLISECONDS, nCapacity)
+                            .slotSharingGroup(readSlotSharingGroup)
+                            .setParallelism(parallelCubeTasks)
+                            .uid("Read-Image-Async");
+            enrichedCameraFeedSinkAsync.print();
+            logger.debug("after Read");
         }
-        //AsyncIo function with multiple threads for readImage
-        AsyncFunction<Tuple2<InputMetadata, CameraWithCube>, Tuple2<InputMetadata, CameraWithCube>> cubeSinkAsyncFunction =
-                new SampleSinkAsyncFunction(host, port, shutdownWaitTS, outputPath, options, nThreads, uuid, deadlineDuration);
-        DataStream<Tuple2<InputMetadata, CameraWithCube>> enrichedCameraFeedSinkAsync =
-                AsyncDataStream.unorderedWait(enrichedCameraFeed, cubeSinkAsyncFunction, timeout, TimeUnit.MILLISECONDS, nCapacity)
-                        .slotSharingGroup(readSlotSharingGroup)
-                        .setParallelism(parallelCubeTasks)
-                        .uid("Read-Image-Async");
-        enrichedCameraFeedSinkAsync.print();
-        logger.debug("after CubeProcessingSink");
+
         // execute program
         long t = System.currentTimeMillis();
         logger.debug("Execution Start env Time(millis) = " + t);
@@ -249,7 +272,7 @@ public class MapTwoStreamsDemo1 {
                     long generatedTS = cameraWithCubeTimingMap.get("Generated");
                     cameraWithCubeTimingMap.put("BeforeCopyImage", t);
                     long diff = t - generatedTS;
-                    if (diff > 500 ) {
+                    if (diff > 500) {
                         //print error msg in log & size of queue? & AfterCopyImage -1 & emit it
                         logger.error("CopyImage Diff for GeneratedTS:{} is:{} which is > 500 ms", generatedTS, diff);
                         //size of queue?
@@ -359,12 +382,20 @@ public class MapTwoStreamsDemo1 {
             }
         }
 
-        @Override
-        public void asyncInvoke(final Tuple2<InputMetadata, CameraWithCube> tuple2, final ResultFuture<Tuple2<InputMetadata, CameraWithCube>> resultFuture) {
-            logger.debug("Entered SampleSinkAsyncFunction.asyncInvoke()");
-            this.executorServiceRead.submit(() -> {
+        /**
+         * Supply a tuple2 back after calling readImage using the provided ExecutirThread from the thread pool
+         *
+         * @param tuple2              Tuple2<InputMetadata, CameraWithCube>
+         * @param cameraTuple         CameraTuple
+         * @param executorServiceRead ExecutorService provided to use to get a thread from a Thread pool
+         * @return Tuple2<<   InputMetadata   ,       CameraWithCube>>
+         */
+        private CompletableFuture<Tuple2<InputMetadata, CameraWithCube>> readImageAsync(final Tuple2<InputMetadata, CameraWithCube> tuple2, final CameraTuple cameraTuple, final ExecutorService executorServiceRead) {
+            logger.debug("Entered SampleSinkAsyncFunction.readImageAsync()");
+            return CompletableFuture.supplyAsync(() -> {
                 try {
-                    logger.info("SampleSinkAsyncFunction - before JNI readImage to retrieve EFS file from efsFileLocation: {}", tuple2.f1.fileLocation);
+                    String camFileLocation = cameraTuple.getCamFileLocation();
+                    logger.info("SampleSinkAsyncFunction - before JNI readImage to retrieve EFS file from camFileLocation: {}", camFileLocation);
                     logger.debug("tuple2.f0:{}, tuple2.f1:{}, options:{}", tuple2.f0, tuple2.f1, options);
                     //TODO: change to use ROI values ??
                     InputMetadata inputMetadata = tuple2.f0;
@@ -373,28 +404,102 @@ public class MapTwoStreamsDemo1 {
                     long t = System.currentTimeMillis();
                     inputMetadataTimingMap.put("BeforeReadImage", t);
                     long diff = t - generatedTS;
-                    if (diff > 500 ) {
-                        //print error msg in log & size of queue? & AfterCopyImage -1 & emit it
+                    if (diff > 500) {
                         logger.error("ReadImage Diff for GeneratedTS:{} is:{} which is > 500 ms", generatedTS, diff);
-                        //size of queue?
+                        //TODO: size of queue?
                         inputMetadataTimingMap.put("AfterReadImage", -1L);
                     } else {
-                        String checkStrValue = nativeLoaderRead.readImage(deadlineDuration, tuple2.f1.fileLocation, 0, 0, 10, 5, options);
-                        /*String checkStrValue = "";
-                        Thread.sleep(10);*/
+                        String checkStrValue = nativeLoaderRead.readImage(deadlineDuration, camFileLocation, 0, 0, 10, 5, options);
                         inputMetadataTimingMap.put("AfterReadImage", System.currentTimeMillis());
                         writeInputMetadataCsv(tuple2);
                         logger.info("readImage checkStrValue: {}", checkStrValue);
-                        logger.debug("SampleSinkAsyncFunction - after JNI readImage to retrieve EFS file from efsFileLocation: {}", tuple2.f1.fileLocation);
+                        logger.debug("SampleSinkAsyncFunction - after JNI readImage to retrieve EFS file from camFileLocation: {}", camFileLocation);
                     }
                     //The ResultFuture is completed with the first call of ResultFuture.complete. All subsequent complete calls will be ignored.
-                    resultFuture.complete(
-                            Collections.singletonList(tuple2));
+                    return tuple2;
                 } catch (Exception e) {
                     logger.error("SampleSinkAsyncFunction - Exception while making readImage call in async call: {}", e);
-                    resultFuture.complete(new ArrayList<>(0));
+                    return new Tuple2<>(); //TODO:???
                 }
-            });
+            }, executorServiceRead);
+
+            /* .exceptionally(ex -> {
+                logger.error("SampleSinkAsyncFunction - Exception while making readImage call in async call: {}", ex);
+                return new Tuple2<InputMetadata, CameraWithCube>(new InputMetadata(), new CameraWithCube()); //TODO:???
+            })*/
+        }
+
+        @Override
+        public void asyncInvoke(final Tuple2<InputMetadata, CameraWithCube> tuple2, final ResultFuture<Tuple2<InputMetadata, CameraWithCube>> resultFuture) {
+            logger.debug("Entered SampleSinkAsyncFunction.asyncInvoke()");
+            //read all 38 cameras for 1 cube in 38 threads
+            //tuple2.f0.cameraLst[i].camFileLocation for each 38 cameras within 1 cube/InputMetadata
+            try {
+                final List<CameraTuple> cameraTupleList = tuple2.f0.cameraLst;
+                //read all camera images within cameraLst of InputMetadata async
+                final List<CompletableFuture<Tuple2<InputMetadata, CameraWithCube>>> completableReadFutures = cameraTupleList.stream()
+                        .map(cameraTuple -> readImageAsync(tuple2, cameraTuple, executorServiceRead))
+                        .collect(Collectors.toList());
+                //Ugly piece of java - crap Async API
+                //Create a combined Future using allOf which return Void
+                final CompletableFuture<Void> allCompletableReadFutures = CompletableFuture.allOf(completableReadFutures
+                        .toArray(new CompletableFuture[completableReadFutures.size()]));
+                //When all Futures are completed, call `future.join()` to get their results & collect the results in a List
+                //join is called when all futures are complete, so no blocking anywhere
+                //TODO: join throws an unchecked exception if the underlying CompletableFuture completes exceptionally.
+                final CompletableFuture<List<Tuple2<InputMetadata, CameraWithCube>>> allReadFutures = allCompletableReadFutures.thenApply(v -> {
+                    return completableReadFutures.stream()
+                            .map(completableReadFuture -> completableReadFuture.join())
+                            .collect(Collectors.toList());
+                });
+                //return input Tuple2 as ResultFuture saying all parallel threads completed
+                //hence use thenAccept which accepts a Consumer with args with nothing returned
+                allReadFutures.thenAccept(inputTupleList -> {
+                    logger.info("All read image futures completed for camera list within Inputmetadata");
+                    resultFuture.complete(
+                            Collections.singletonList(tuple2));
+                });
+            } catch (Exception e) {
+                logger.error("SampleSinkAsyncFunction - Exception while making readImage call in async call: {}", e);
+                resultFuture.complete(new ArrayList<>(0));
+            }
+
+            /*for (CameraTuple cameraTuple :
+                    tuple2.f0.cameraLst) {
+                String camFileLocation = cameraTuple.getCamFileLocation();
+
+                this.executorServiceRead.submit(() -> {
+                    try {
+                        logger.info("SampleSinkAsyncFunction - before JNI readImage to retrieve EFS file from camFileLocation: {}", camFileLocation);
+                        logger.debug("tuple2.f0:{}, tuple2.f1:{}, options:{}", tuple2.f0, tuple2.f1, options);
+                        //TODO: change to use ROI values ??
+                        InputMetadata inputMetadata = tuple2.f0;
+                        final HashMap<String, Long> inputMetadataTimingMap = inputMetadata.getTimingMap();
+                        long generatedTS = inputMetadataTimingMap.get("Generated");
+                        long t = System.currentTimeMillis();
+                        inputMetadataTimingMap.put("BeforeReadImage", t);
+                        long diff = t - generatedTS;
+                        if (diff > 500) {
+                            logger.error("ReadImage Diff for GeneratedTS:{} is:{} which is > 500 ms", generatedTS, diff);
+                            //TODO: size of queue?
+                            inputMetadataTimingMap.put("AfterReadImage", -1L);
+                        } else {
+                            String checkStrValue = nativeLoaderRead.readImage(deadlineDuration, camFileLocation, 0, 0, 10, 5, options);
+                            inputMetadataTimingMap.put("AfterReadImage", System.currentTimeMillis());
+                            writeInputMetadataCsv(tuple2);
+                            logger.info("readImage checkStrValue: {}", checkStrValue);
+                            logger.debug("SampleSinkAsyncFunction - after JNI readImage to retrieve EFS file from camFileLocation: {}", camFileLocation);
+                        }
+                        //The ResultFuture is completed with the first call of ResultFuture.complete. All subsequent complete calls will be ignored.
+                        resultFuture.complete(
+                                Collections.singletonList(tuple2));
+                    } catch (Exception e) {
+                        logger.error("SampleSinkAsyncFunction - Exception while making readImage call in async call: {}", e);
+                        resultFuture.complete(new ArrayList<>(0));
+                    }
+                });
+                //TODO: how to wait for all 38 cameras to complete with async calls on separate threads
+            }*/
         }
 
         private void writeInputMetadataCsv(final Tuple2<InputMetadata, CameraWithCube> tuple2) {

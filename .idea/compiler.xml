@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="flink-intel-grpc1" />
+        <module name="intel-grpc-fd19-alpha" />
       </profile>
     </annotationProcessing>
   </component>

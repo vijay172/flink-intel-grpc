@@ -1,168 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25130964-c374-4867-9067-dee1a770d8a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/libexample.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/datatypes/CameraTuple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/datatypes/CameraWithCube$CameraKey.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/datatypes/CameraWithCube.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/datatypes/InputMetadata$InputMetadataKey.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/datatypes/InputMetadata.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/jni/NativeLoader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/sources/CheckpointedCameraWithCubeSource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/sources/CheckpointedInputMetadataSource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/state/MapTwoStreamsDemo1$CubeProcessingSink.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/state/MapTwoStreamsDemo1$SyncLatchFunction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/com/intel/flink/state/MapTwoStreamsDemo1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/configuration.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/libexample.jnilib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/libexample.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/flink-intel-1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/original-flink-intel-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FlinkBWA" beforeDir="false" afterPath="$PROJECT_DIR$/../../FlinkBWA" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ProgramCreek" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProgramCreek" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/3.11.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/3.11.3/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/ExampleJNI.dir/com/intel/proxy/StoragePOC.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/ExampleJNI.dir/com/intel/proxy/StoragePOC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/ExampleJNI.dir/com/intel/proxy/example.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/ExampleJNI.dir/com/intel/proxy/example.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/ExampleJNI.dir/com/intel/proxy/exampleJNI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/ExampleJNI.dir/com/intel/proxy/exampleJNI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/ExampleJNI.dir/java_class_filelist" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/ExampleJNI.dir/java_class_filelist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/Main.dir/com/intel/proxy/StoragePOC.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/Main.dir/com/intel/proxy/StoragePOC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/Main.dir/com/intel/proxy/example.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/Main.dir/com/intel/proxy/example.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/Main.dir/com/intel/proxy/exampleJNI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/Main.dir/com/intel/proxy/exampleJNI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/Main.dir/java_class_filelist" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/Main.dir/java_class_filelist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/Main.dir/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/Main.dir/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/example.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/example.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/example.dir/com/intel/proxy/exampleJAVA_wrap.cxx.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/example.dir/com/intel/proxy/exampleJAVA_wrap.cxx.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/example.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/example.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/example.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/example.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/gen_example_exampleJAVA_wrap.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/gen_example_exampleJAVA_wrap.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/gen_example_exampleJAVA_wrap.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/gen_example_exampleJAVA_wrap.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/gen_example_exampleJAVA_wrap.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/CMakeFiles/gen_example_exampleJAVA_wrap.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/ExampleJNI-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/ExampleJNI-0.0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/Main-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/Main-0.0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/com/intel/proxy/StoragePOC.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/com/intel/proxy/StoragePOC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/com/intel/proxy/example.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/com/intel/proxy/example.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/com/intel/proxy/exampleJAVA_wrap.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/com/intel/proxy/exampleJAVA_wrap.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/com/intel/proxy/exampleJNI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/com/intel/proxy/exampleJNI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/libexample.jnilib" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/build/libexample.jnilib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/example.i" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/example.i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/storagepoc.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/storagepoc.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/cmake-swig-java1/system.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cmake-swig-java/javaeg1.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../../cmake-swig-java/javaeg1.tar.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/bootstrap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindAWSSDK_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindBlosc_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindBzip2_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindCatch_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindClangTools.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindCurl_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindLIBJVM.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindLZ4_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindOpenSSL_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindSpdlog_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindTBB_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindZlib_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/FindZstd_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/Modules/TileDBCommon.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/TileDB-Superbuild.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/inputs/Config.cmake.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/cmake/inputs/configure-curl.sh.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/storagepoc/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/storagepoc/storagepoc.cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/storagepoc/storagepoc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/test/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC 2/test/main.cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/bootstrap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindAWSSDK_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindBlosc_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindBzip2_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindCatch_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindClangTools.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindCurl_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindLIBJVM.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindLZ4_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindOpenSSL_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindSpdlog_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindTBB_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindZlib_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/FindZstd_EP.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/Modules/TileDBCommon.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/TileDB-Superbuild.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/inputs/Config.cmake.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/cmake/inputs/configure-curl.sh.in" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/storagepoc/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/storagepoc/storagepoc.cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/storagepoc/storagepoc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/test/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/test/CMakeListsCopy.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/CPPStoragePOC/test/main.cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/build/storagepoc/CMakeFiles/STORAGEPOC_CORE_OBJECTS.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/build/storagepoc/CMakeFiles/STORAGEPOC_CORE_OBJECTS.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/build/storagepoc/CMakeFiles/STORAGEPOC_CORE_OBJECTS.dir/storagepoc.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/build/storagepoc/CMakeFiles/STORAGEPOC_CORE_OBJECTS.dir/storagepoc.cc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/build/storagepoc/libstoragepoc.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/build/storagepoc/libstoragepoc.dylib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/storagepoc/storagepoc.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/storagepoc/storagepoc.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/storagepoc/storagepoc.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../cpp-storage/cppnew1/CPPStoragePOC/storagepoc/storagepoc.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../dam/Bonanza-DAM" beforeDir="false" afterPath="$PROJECT_DIR$/../../dam/Bonanza-DAM" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker-compose-in-depth" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-compose-in-depth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker-demo" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-demo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker-demo-nginx" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-demo-nginx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker-demo1" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-demo1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker-tutorial" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-tutorial" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flink-training-exercises" beforeDir="false" afterPath="$PROJECT_DIR$/../flink-training-exercises" afterDir="false" />
+    <list default="true" id="336ecbc9-eb88-400b-aa5d-ab5fffa7b07f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/ExampleJNI/0.0.1/ExampleJNI-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/lib/ExampleJNI-0.0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/ExampleJNI/0.0.1/ExampleJNI-0.0.1.jar.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/ExampleJNI/0.0.1/ExampleJNI-0.0.1.jar.sha1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/ExampleJNI/0.0.1/ExampleJNI-0.0.1.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/ExampleJNI/0.0.1/ExampleJNI-0.0.1.pom.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/ExampleJNI/0.0.1/ExampleJNI-0.0.1.pom.sha1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/ExampleJNI/maven-metadata.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/ExampleJNI/maven-metadata.xml.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/ExampleJNI/maven-metadata.xml.sha1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/Main/0.0.1/Main-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/target/classes/lib/Main-0.0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/Main/0.0.1/Main-0.0.1.jar.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/Main/0.0.1/Main-0.0.1.jar.sha1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/Main/0.0.1/Main-0.0.1.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/Main/0.0.1/Main-0.0.1.pom.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/Main/0.0.1/Main-0.0.1.pom.sha1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/Main/maven-metadata.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/Main/maven-metadata.xml.md5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/local-maven-repo/com/intel/proxy/Main/maven-metadata.xml.sha1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/scripts/start_demo_app.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/scripts/start_demo_app.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/datatypes/CameraWithCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/datatypes/CameraWithCube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/datatypes/InputMetadata.java" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/datatypes/InputMetadata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/jni/NativeLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/jni/NativeLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/sources/CheckpointedCameraWithCubeSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/sources/CheckpointedCameraWithCubeSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/sources/CheckpointedInputMetadataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/sources/CheckpointedInputMetadataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/state/MapTwoStreamsDemo1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/java/com/intel/flink/state/MapTwoStreamsDemo1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/lib/ExampleJNI-0.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/libexample.jnilib" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/libexample.jnilib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../understanding-apache-flink/03-processing-infinite-streams-of-data/demo1/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../kinesis-video-streams-example/amazon-kinesis-video-streams-producer-sdk-java" beforeDir="false" afterPath="$PROJECT_DIR$/../../kinesis-video-streams-example/amazon-kinesis-video-streams-producer-sdk-java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../scorecard" beforeDir="false" afterPath="$PROJECT_DIR$/../../scorecard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sport/truevrdataparser" beforeDir="false" afterPath="$PROJECT_DIR$/../../sport/truevrdataparser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sports/nodejs-restify" beforeDir="false" afterPath="$PROJECT_DIR$/../../sports/nodejs-restify" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/start_demo_app.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/start_demo_app.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/intel/flink/datatypes/CameraTuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/intel/flink/datatypes/CameraTuple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedCameraWithCubeSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedCameraWithCubeSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedInputMetadataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedInputMetadataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/intel/flink/state/MapTwoStreamsDemo1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/intel/flink/state/MapTwoStreamsDemo1.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -174,26 +25,22 @@
   <component name="CheckStyle-IDEA-workspace">
     <option name="configuration">
       <map>
-        <entry key="last-active-plugin-version" value="5.21.1" />
+        <entry key="last-active-plugin-version" value="5.22.0" />
       </map>
     </option>
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="1555999748">
+    <session id="-1022633103">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="7" />
-          <entry key="gitignore" value="1" />
-          <entry key="java" value="10" />
-          <entry key="md" value="1" />
-          <entry key="properties" value="1" />
+          <entry key="class" value="4" />
+          <entry key="java" value="8" />
           <entry key="sh" value="1" />
           <entry key="xml" value="1" />
         </counts>
@@ -201,143 +48,104 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="1" />
-          <entry key="CLASS" value="7" />
-          <entry key="JAVA" value="10" />
-          <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="1" />
+          <entry key="CLASS" value="4" />
+          <entry key="JAVA" value="8" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1959" />
-          <entry key="md" value="343" />
-          <entry key="properties" value="1" />
-          <entry key="sh" value="32" />
-          <entry key="xml" value="5" />
+          <entry key="java" value="2195" />
+          <entry key="sh" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bash" value="32" />
-          <entry key="JAVA" value="1961" />
-          <entry key="Markdown" value="343" />
-          <entry key="Properties" value="1" />
-          <entry key="XML" value="3" />
+          <entry key="Bash" value="42" />
+          <entry key="JAVA" value="2195" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/state/MapTwoStreamsDemo1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8910">
-              <caret line="638" column="86" selection-start-line="638" selection-start-column="86" selection-end-line="638" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/datatypes/CameraTuple.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/datatypes/CameraWithCube.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2550">
-              <caret line="203" column="12" selection-start-line="203" selection-start-column="12" selection-end-line="203" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedCameraWithCubeSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="92" column="26" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedInputMetadataSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1515">
-              <caret line="109" column="8" selection-start-line="109" selection-start-column="8" selection-end-line="109" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/start_demo_app.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="229" selection-start-line="19" selection-start-column="229" selection-end-line="19" selection-end-column="229" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="225">
-                <caret line="15" selection-start-line="15" selection-end-line="15" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/grpc/image/client/ImageRefClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3525">
-              <caret line="264" column="26" selection-start-line="264" selection-start-column="26" selection-end-line="264" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/state/MapTwoStreamsDemo1.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="430">
+                  <caret line="283" column="83" selection-start-line="283" selection-start-column="38" selection-end-line="283" selection-end-column="83" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedInputMetadataSource.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="998">
+                  <caret line="104" column="68" selection-start-line="104" selection-start-column="68" selection-end-line="104" selection-end-column="68" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/scripts/start_demo_app.sh">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="11" column="389" selection-start-line="11" selection-start-column="389" selection-end-line="11" selection-end-column="389" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pom.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="345">
+                  <caret line="23" column="37" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedCameraWithCubeSource.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="292">
+                  <caret line="49" column="64" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="64" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/datatypes/CameraTuple.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="405">
+                  <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedCameraWithCubeSource.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="176">
+                  <caret line="84" column="73" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="73" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>System.err.println</find>
-      <find>Shutting down</find>
-      <find>Thread</find>
+      <find>fileLocation</find>
     </findStrings>
-    <replaceStrings>
-      <replace>logger.error</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -362,17 +170,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/intel/grpc/image/client/ImageClient.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/intel/flink/jni/NativeLoader.java" />
-        <option value="$PROJECT_DIR$/scripts/start_demo_app.sh" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/com/intel/flink/datatypes/CameraWithCube.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedCameraWithCubeSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/intel/flink/datatypes/CameraTuple.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedInputMetadataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/intel/flink/state/MapTwoStreamsDemo1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/intel/grpc/image/client/ImageRefClient.java" />
+        <option value="$PROJECT_DIR$/scripts/start_demo_app.sh" />
       </list>
     </option>
   </component>
@@ -383,78 +184,63 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="Flink Grpc Job" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="Flink Grpc Job" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="15" />
-    <option name="y" value="-1397" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="2" />
+    <option name="y" value="-873" />
     <option name="width" value="1440" />
     <option name="height" value="873" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="flink-intel-grpc1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="flink-intel-grpc1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="flink-intel-grpc1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="flink-intel-grpc1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="flink-intel-grpc1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="flink-intel-grpc1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="intel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="flink-intel-grpc1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -462,8 +248,8 @@
               <item name="flink" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="flink-intel-grpc1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -472,8 +258,8 @@
               <item name="datatypes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="flink-intel-grpc1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -482,8 +268,8 @@
               <item name="sources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="flink-intel-grpc1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -492,38 +278,45 @@
               <item name="state" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="flink-intel-grpc1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="intel" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="intel-grpc-fd19-alpha" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grpc-fd19-alpha" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="nat&#9;PSI&#9;JAVA://com.intel.flink.jni.NativeLoader" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534178248713" />
-    <property name="extract.method.default.visibility" value="private" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534959254229" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/main/resources/lib" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/intel/grpc/image/client" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -537,7 +330,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ImageClient">
+  <component name="RunManager">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -546,28 +339,6 @@
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ImageClient" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.intel.grpc.image.client.ImageRefClient" />
-      <module name="flink-intel-grpc1" />
-      <option name="PROGRAM_PARAMETERS" value="test.txt tmp test 20000 localhost 50051" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NativeLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.intel.flink.jni.NativeLoader" />
-      <module name="flink-intel-grpc1" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.intel.flink.jni.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -651,15 +422,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Application.ImageClient" />
-      <item itemvalue="Application.NativeLoader" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.NativeLoader" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
     <option name="projectSyncType">
@@ -673,48 +435,45 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="25130964-c374-4867-9067-dee1a770d8a5" name="Default Changelist" comment="" />
-      <created>1533691382694</created>
+      <changelist id="336ecbc9-eb88-400b-aa5d-ab5fffa7b07f" name="Default Changelist" comment="" />
+      <created>1534885790587</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1533691382694</updated>
+      <updated>1534885790587</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="15" y="-1397" width="1440" height="873" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="-1440" width="2560" height="1440" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" />
+      <window_info anchor="bottom" id="CheckStyle" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.5781022" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3290653" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.45326504" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39948782" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3290653" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3290653" />
-      <window_info anchor="bottom" id="CheckStyle" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.3290653" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3297568" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
     </layout>
     <layout-to-restore>
       <window_info id="Image Layers" order="0" />
@@ -722,17 +481,17 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24964234" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.24964234" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="CheckStyle" order="0" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.3290653" />
+      <window_info anchor="bottom" id="Terminal" order="3" visible="true" weight="0.5787452" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="5" />
       <window_info anchor="bottom" id="Message" order="6" />
-      <window_info active="true" anchor="bottom" id="Find" order="7" visible="true" weight="0.3290653" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.3290653" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Run" order="8" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -741,7 +500,7 @@
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="4" weight="0.3297568" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="right" id="Commander" order="5" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
@@ -750,170 +509,91 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/intel/grpc/image/client/ImageRefClient.java</url>
-          <line>318</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/intel/grpc/image/client/ImageRefClient.java</url>
-          <line>321</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/io/grpc/grpc-core/1.14.0/grpc-core-1.14.0.jar!/io/grpc/Metadata.class</url>
-          <line>414</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/intel/grpc/Image/0.0.1/Image-0.0.1.jar!/com/proto/image/Roi.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/datatypes/InputMetadata.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3313">
-          <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/intel/grpc/Image/0.0.1/Image-0.0.1.jar!/com/proto/image/ImageServiceGrpc.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="324" column="33" selection-start-line="324" selection-start-column="33" selection-end-line="324" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/grpc/grpc-core/1.14.0/grpc-core-1.14.0.jar!/io/grpc/ManagedChannelBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/grpc/grpc-core/1.14.0/grpc-core-1.14.0.jar!/io/grpc/internal/AbstractManagedChannelImplBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="363" selection-start-line="363" selection-end-line="363" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/grpc/grpc-core/1.14.0/grpc-core-1.14.0.jar!/io/grpc/internal/GrpcUtil.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/grpc/grpc-core/1.14.0/grpc-core-1.14.0.jar!/io/grpc/Metadata.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="333" selection-start-line="333" selection-end-line="333" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/grpc/grpc-netty-shaded/1.14.0/grpc-netty-shaded-1.14.0.jar!/io/grpc/netty/shaded/io/grpc/netty/NettyChannelProvider.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="155" column="20" lean-forward="true" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/jni/NativeLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        <state relative-caret-position="823">
+          <caret line="129" column="22" lean-forward="true" selection-start-line="129" selection-start-column="22" selection-end-line="129" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="class#InputMetadataKey#0;class#InputMetadata#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/state/MapTwoStreamsDemo1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8910">
-          <caret line="638" column="86" selection-start-line="638" selection-start-column="86" selection-end-line="638" selection-end-column="86" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/datatypes/CameraTuple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/datatypes/CameraWithCube.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="203" column="12" selection-start-line="203" selection-start-column="12" selection-end-line="203" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedCameraWithCubeSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="92" column="26" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="26" />
+        <state relative-caret-position="405">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedInputMetadataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="109" column="8" selection-start-line="109" selection-start-column="8" selection-end-line="109" selection-end-column="8" />
+        <state relative-caret-position="998">
+          <caret line="104" column="68" selection-start-line="104" selection-start-column="68" selection-end-line="104" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="225">
-            <caret line="15" selection-start-line="15" selection-end-line="15" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/grpc/image/client/ImageRefClient.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.6.0/flink-streaming-java_2.11-1.6.0.jar!/org/apache/flink/streaming/api/functions/async/AsyncFunction.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3525">
-          <caret line="264" column="26" selection-start-line="264" selection-start-column="26" selection-end-line="264" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.6.0/flink-streaming-java_2.11-1.6.0.jar!/org/apache/flink/streaming/api/functions/async/RichAsyncFunction.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        <state relative-caret-position="105">
+          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.6.0/flink-streaming-java_2.11-1.6.0.jar!/org/apache/flink/streaming/api/functions/async/ResultFuture.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.6.0/flink-streaming-java_2.11-1.6.0.jar!/org/apache/flink/streaming/api/operators/async/queue/StreamRecordQueueEntry.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/concurrent/CompletableFuture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2785">
+          <caret line="1959" column="19" selection-start-line="1959" selection-start-column="19" selection-end-line="1959" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/state/MapTwoStreamsDemo1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="283" column="83" selection-start-line="283" selection-start-column="38" selection-end-line="283" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/intel/flink/sources/CheckpointedCameraWithCubeSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="49" column="64" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/start_demo_app.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="229" selection-start-line="19" selection-start-column="229" selection-end-line="19" selection-end-column="229" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        <state relative-caret-position="165">
+          <caret line="11" column="389" selection-start-line="11" selection-start-column="389" selection-end-line="11" selection-end-column="389" />
         </state>
       </provider>
     </entry>

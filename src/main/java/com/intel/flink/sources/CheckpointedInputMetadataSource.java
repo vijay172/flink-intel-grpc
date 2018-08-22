@@ -27,6 +27,10 @@ public class CheckpointedInputMetadataSource implements SourceFunction<InputMeta
     private final int servingSpeedMs;
     //Initial kickoff time passed in
     private final long currentTimeMs;
+    //delay source by millisec
+    private final int sourceDelay;
+    //camera file location
+    private final String fileLocation;
 
     private static final int NBR_OF_CUBES = 1000;
     private static final long MAX_SEQ_CNT = 36000; //20 mins * 60 secs/min * 30 frames/sec
@@ -35,22 +39,26 @@ public class CheckpointedInputMetadataSource implements SourceFunction<InputMeta
     private static final String CAM = "cam";
     private static final String ROI = "roi";
     private static final int NBR_OF_CAMERA_TUPLES = 19;
+    private static final int SOURCE_DELAY = 15000;
+    private static final String FILE_LOCATION = "file:///tmp";
+
 
     private boolean running = true;
 
     public CheckpointedInputMetadataSource() {
-        this(MAX_SEQ_CNT, SERVING_SPEED_FREQ_MILLIS, System.currentTimeMillis(), NBR_OF_CUBES, NBR_OF_CAMERA_TUPLES);
+        this(MAX_SEQ_CNT, SERVING_SPEED_FREQ_MILLIS, System.currentTimeMillis(), NBR_OF_CUBES, NBR_OF_CAMERA_TUPLES, SOURCE_DELAY, FILE_LOCATION);
     }
 
     public CheckpointedInputMetadataSource(long maxSeqCnt, int servingSpeedMs) {
-        this(maxSeqCnt, servingSpeedMs, System.currentTimeMillis(), NBR_OF_CUBES, NBR_OF_CAMERA_TUPLES);
+        this(maxSeqCnt, servingSpeedMs, System.currentTimeMillis(), NBR_OF_CUBES, NBR_OF_CAMERA_TUPLES, SOURCE_DELAY, FILE_LOCATION);
     }
 
     public CheckpointedInputMetadataSource(long currentTimeMs) {
-        this(MAX_SEQ_CNT, SERVING_SPEED_FREQ_MILLIS, currentTimeMs, NBR_OF_CUBES, NBR_OF_CAMERA_TUPLES);
+        this(MAX_SEQ_CNT, SERVING_SPEED_FREQ_MILLIS, currentTimeMs, NBR_OF_CUBES, NBR_OF_CAMERA_TUPLES, SOURCE_DELAY, FILE_LOCATION);
     }
 
-    public CheckpointedInputMetadataSource(long maxSeqCnt, int servingSpeedMs, long currentTimeMs, int nbrCubes, int nbrCameraTuples) {
+    public CheckpointedInputMetadataSource(long maxSeqCnt, int servingSpeedMs, long currentTimeMs, int nbrCubes,
+                                           int nbrCameraTuples, int sourceDelay, String fileLocation) {
         if (maxSeqCnt < 0) {
             throw new IllegalArgumentException("Max sequence count must be positive");
         } else if (servingSpeedMs < 0) {
@@ -61,12 +69,16 @@ public class CheckpointedInputMetadataSource implements SourceFunction<InputMeta
             throw new IllegalArgumentException("Number of cubes must be positive");
         } else if (nbrCameraTuples < 0) {
             throw new IllegalArgumentException("Number of camera tuples per cube must be positive");
+        } else if (sourceDelay < 0) {
+            throw new IllegalArgumentException("SourceDelay must be positive");
         }
         this.maxSeqCnt = maxSeqCnt;
         this.currentTimeMs = currentTimeMs;
         this.servingSpeedMs = servingSpeedMs;
         this.nbrCubes = nbrCubes;
         this.nbrCameraTuples = nbrCameraTuples;
+        this.sourceDelay = sourceDelay;
+        this.fileLocation = fileLocation;
     }
 
     @Override
@@ -88,6 +100,9 @@ public class CheckpointedInputMetadataSource implements SourceFunction<InputMeta
                         CameraTuple cameraTuple = new CameraTuple();
                         cameraTuple.setCamera(CAM + camTupleCnt);
                         cameraTuple.setRoi(ROI + camTupleCnt);//TODO: make it an ROI(x,y,width,height) object
+                        String outputFile1 = fileLocation + "/" + seqCnt + "/" + cameraTuple.getCamera() + ".jpg";
+                        logger.debug("InputMetadata CameraLst - Camera Source fileLocation: {}", outputFile1);
+                        cameraTuple.setCamFileLocation(outputFile1);
                         cameraTupleList.add(cameraTuple);
                     }
                     inputMetadata.setCameraLst(cameraTupleList);
@@ -99,7 +114,7 @@ public class CheckpointedInputMetadataSource implements SourceFunction<InputMeta
                 }
                 //next seqCnt after servingSpeedMs
                 long currWorkingTime = System.currentTimeMillis();//1240 ; 1267
-                long nextKickOffTime = currentTimeMs + (servingSpeedMs * (seqCnt+1) + 100000);// 1234 + 33 *1= 1267; 1267 + 33= 1300
+                long nextKickOffTime = currentTimeMs + (servingSpeedMs * (seqCnt+1) + sourceDelay);// 1234 + 33 *1= 1267; 1267 + 33= 1300
                 long diffGreaterThanZero = nextKickOffTime - currWorkingTime;//1267 - 1240 = 27; 1300 - 1267 = 33
                 if (diffGreaterThanZero > 0) {
                     Thread.sleep(diffGreaterThanZero);

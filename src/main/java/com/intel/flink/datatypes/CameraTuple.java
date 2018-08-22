@@ -1,14 +1,15 @@
 package com.intel.flink.datatypes;
 
-import org.apache.flink.api.java.tuple.Tuple2;
+import org.apache.flink.api.java.tuple.Tuple3;
 
-public class CameraTuple extends Tuple2<String, String> {
+public class CameraTuple extends Tuple3<String, String, String> {
 
     public CameraTuple() {}
 
-    public CameraTuple(final String cam, final String roi) {
+    public CameraTuple(final String cam, final String roi, final String camFileLocation) {
         this.f0 = cam;
         this.f1 = roi;
+        this.f2 = camFileLocation;
     }
 
     public String getCamera() {
@@ -27,11 +28,20 @@ public class CameraTuple extends Tuple2<String, String> {
         this.f1 = roi;
     }
 
+    public String getCamFileLocation() {
+        return this.f2;
+    }
+
+    public void setCamFileLocation(String camFileLocation) {
+        this.f2 = camFileLocation;
+    }
+
     @Override
     public String toString() {
         return "CameraTuple{" +
                 "f0=" + f0 +
                 ", f1=" + f1 +
+                ", f2=" + f2 +
                 '}';
     }
 }
